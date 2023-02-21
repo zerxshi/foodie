@@ -1,22 +1,24 @@
 <template>
-  <div class="relative text-center transition-all duration-500 myContainer">
+  <div class="group relative text-center transition-all duration-500">
     <img :src="imageSource" alt="image" />
     <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-1/2 h-1/2 flex justify-center items-center transition-all duration-500 outerDiv"
-      :class="{ 'w-1/2': slide, 'w-2/3': !slide }"
+      class="outerDiv absolute top-1/2 left-1/2 flex h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-white transition-all duration-500 group-hover:bg-light-green"
+      :class="{ 'w-1/2': slide, 'w-5/6': !slide }"
     >
       <div
-        class="w-3/4 h-3/4 border-2 border-light-green flex flex-col justify-center items-center font-bold transition-all duration-500 innerDiv"
+        class="flex h-3/4 w-3/4 flex-col items-center justify-center border-2 border-light-green transition-all duration-500 group-hover:border-white"
       >
-        <p class="text-light-green transition-all duration-500 slideContent">
+        <button
+          class="font-medium text-light-green transition-all duration-500 group-hover:text-white"
+        >
           {{ cardContent }}
-        </p>
-        <p
-          class="transition-all duration-500 slideTitle"
+        </button>
+        <button
+          class="font-bold transition-all duration-500 group-hover:text-white"
           :class="{ 'text-2xl': slide, 'text-xl': !slide }"
         >
           {{ cardTitle }}
-        </p>
+        </button>
       </div>
     </div>
   </div>
@@ -25,30 +27,29 @@
 <script lang="ts">
 export default {
   name: "image-card",
-  props: {
-    imageSource: {
-      type: String,
-      required: true,
-    },
-    cardContent: String,
-    cardTitle: String,
-    slide: Boolean,
-  },
 }
 </script>
 
+<script setup lang="ts">
+import { computed } from "@vue/runtime-core"
+const props = defineProps({
+  imageSource: {
+    type: String,
+    required: true,
+  },
+  cardContent: String,
+  cardTitle: String,
+  slide: Boolean,
+})
+</script>
+
 <style scoped>
-.myContainer:hover .outerDiv {
-  background-color: #b0c364;
-}
-.myContainer:hover .innerDiv {
-  border-color: white;
-}
-.myContainer:hover .slideContent {
-  color: white;
+.carousel__slide .outerDiv {
+  display: none;
 }
 
-.myContainer:hover .slideTitle {
-  color: white;
+.carousel__slide--active .outerDiv {
+  opacity: 1;
+  display: flex;
 }
 </style>

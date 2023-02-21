@@ -1,8 +1,8 @@
 <template>
   <button
-    class="text-lg text-slate-700 font-bold m-3 hover:text-light-green transition-all duration-300"
+    class="m-3 text-lg font-semibold text-slate-800 transition-all duration-300 hover:text-light-green"
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>
 

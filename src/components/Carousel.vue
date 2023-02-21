@@ -10,7 +10,7 @@
     </slide>
 
     <template #addons>
-      <navigation class="text-white" />
+      <navigation class="text-black" />
     </template>
   </carousel>
 </template>
@@ -66,10 +66,10 @@ const slides = ref<any[]>([
 ])
 
 const breakPoints = ref({
-  1024: {
+  768: {
     itemsToShow: 2,
   },
-  1536: {
+  1024: {
     itemsToShow: 3,
   },
 })
@@ -77,6 +77,23 @@ const breakPoints = ref({
 
 <style scoped>
 .carousel__slide {
-  padding: 15px;
+  padding: 33px;
+}
+
+.carousel__slide--prev {
+  filter: brightness(65%);
+}
+
+.carousel__slide--next {
+  filter: brightness(65%);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  transform: rotateY(0) scale(1.1);
+}
+
+.carousel__slide--sliding {
+  transition: 0.5s;
 }
 </style>

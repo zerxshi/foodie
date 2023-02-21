@@ -6,14 +6,32 @@ import "@/assets/main.css"
 import components from "@/components/UI"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import {
+  faMagnifyingGlass,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons"
+import {
+  faFacebookF,
+  faPinterest,
+  faSquareInstagram,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons"
 
 const app = createApp(App)
 
 components.forEach((component) => {
   app.component(component.name, component)
 })
-library.add(faMagnifyingGlass)
+library.add(
+  faMagnifyingGlass,
+  faSquareInstagram,
+  faTwitter,
+  faFacebookF,
+  faPinterest,
+  faYoutube,
+  faEnvelope
+)
 
 app
   .component("font-awesome-icon", FontAwesomeIcon)
