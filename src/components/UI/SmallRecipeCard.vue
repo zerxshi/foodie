@@ -5,12 +5,14 @@
       alt="recipeCardImg"
       class="w-48 md:w-72 lg:w-60 xl:w-80"
     />
-    <div class="flex flex-col items-start gap-4">
-      <button class="font-medium text-light-green">{{ recipeType }}</button>
-      <button class="text-2xl font-semibold">
+    <div class="flex flex-col items-start gap-3">
+      <button class="text-xs font-semibold text-light-green">
+        {{ recipeType }}
+      </button>
+      <button class="text-lg font-semibold xl:text-2xl">
         {{ recipeTitle }}
       </button>
-      <p class="text-base text-gray-500 lg:text-lg">
+      <p class="text-sm text-gray-500">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquam
         beatae tempore ipsa esse odit maiores atque eveniet! Corporis et maiores
         non nulla vel facere quia maxime veritatis magni quisquam, itaque quod

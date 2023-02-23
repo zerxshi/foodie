@@ -2,20 +2,20 @@
   <div class="group relative text-center transition-all duration-500">
     <img :src="imageSource" alt="image" />
     <div
-      class="outerDiv absolute top-1/2 left-1/2 flex h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-white transition-all duration-500 group-hover:bg-light-green"
-      :class="{ 'w-1/2': slide, 'w-5/6': !slide }"
+      class="outerDiv absolute top-1/2 left-1/2 flex h-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-white transition-all duration-500 group-hover:bg-light-green"
+      :class="{ 'w-2/3': slide, 'w-5/6': !slide }"
     >
       <div
-        class="flex h-3/4 w-3/4 flex-col items-center justify-center border-2 border-light-green transition-all duration-500 group-hover:border-white"
+        class="flex h-3/4 w-3/4 flex-col items-center justify-center gap-1 border-2 border-light-green transition-all duration-500 group-hover:border-white"
       >
         <button
-          class="font-medium text-light-green transition-all duration-500 group-hover:text-white"
+          class="text-xs font-semibold text-light-green transition-all duration-500 group-hover:text-white"
         >
           {{ cardContent }}
         </button>
         <button
-          class="font-bold transition-all duration-500 group-hover:text-white"
-          :class="{ 'text-2xl': slide, 'text-xl': !slide }"
+          class="text-lg font-semibold transition-all duration-500 group-hover:text-white"
+          :class="{ 'xl:text-3xl': slide, 'xl:text-2xl': !slide }"
         >
           {{ cardTitle }}
         </button>

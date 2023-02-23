@@ -4,9 +4,6 @@
     <div
       class="mt-6 flex flex-col items-center justify-center gap-7 lg:flex-row"
     >
-      <!-- <div v-for="card in recommendationCards" :key="card" class="xl:w-96">
-       
-      </div> -->
       <div class="flex flex-col gap-7 md:flex-row">
         <image-card
           :imageSource="'https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_960_720.jpg'"
