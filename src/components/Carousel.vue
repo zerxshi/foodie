@@ -22,12 +22,6 @@ import { Carousel, Slide, Navigation } from "vue3-carousel"
 
 const slides = ref<any[]>([
   {
-    title: "Burger",
-    content: "AMERICAN FOOD",
-    image:
-      "https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_960_720.jpg",
-  },
-  {
     title: "Steak",
     content: "MEAT FOOD",
     image:

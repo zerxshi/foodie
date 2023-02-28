@@ -9,6 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import {
   faMagnifyingGlass,
   faEnvelope,
+  faAngleDown,
+  faChevronDown,
+  faBars,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebookF,
@@ -30,7 +34,11 @@ library.add(
   faFacebookF,
   faPinterest,
   faYoutube,
-  faEnvelope
+  faEnvelope,
+  faAngleDown,
+  faChevronDown,
+  faBars,
+  faXmark
 )
 
 app

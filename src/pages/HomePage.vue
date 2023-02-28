@@ -10,4 +10,12 @@
 import Carousel from "@/components/Carousel.vue"
 import Recommendations from "@/components/Recommendations.vue"
 import RecipesList from "@/components/RecipesList.vue"
+import { useStoreRecipes } from "@/stores/storeRecipes"
+import { onMounted } from "vue"
+
+// const storeRecipes = useStoreRecipes()
+
+// onBeforeMount(() => {
+//   storeRecipes.getRecipes()
+// })
 </script>
