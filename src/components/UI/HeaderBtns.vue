@@ -1,5 +1,5 @@
 <template>
-  <header-btn>Home</header-btn>
+  <header-btn @click="$router.push('/')">Home</header-btn>
   <div class="relative inline-block">
     <header-btn class="group"
       >Categories
@@ -8,13 +8,19 @@
         class="text-base text-slate-600 group-hover:text-light-green"
       />
       <div
-        class="absolute z-2 hidden flex-col bg-white shadow-2xl transition-all duration-1000 group-hover:flex"
+        class="absolute z-2 hidden origin-top-center animate-growOut flex-col bg-white shadow-2xl group-hover:flex"
       >
-        <header-btn class="text-sm">Meal type</header-btn>
+        <header-btn @click="$router.push('/meals')" class="text-sm"
+          >Meal type</header-btn
+        >
         <hr />
-        <header-btn class="text-sm">Dish type</header-btn>
+        <header-btn @click="$router.push('/dishes')" class="text-sm"
+          >Dish type</header-btn
+        >
         <hr />
-        <header-btn class="text-sm">Cuisine type</header-btn>
+        <header-btn @click="$router.push('/cuisines')" class="text-sm"
+          >Cuisine type</header-btn
+        >
       </div>
     </header-btn>
   </div>

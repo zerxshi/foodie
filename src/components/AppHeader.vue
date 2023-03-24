@@ -5,12 +5,13 @@
     <font-awesome-icon
       @click="storeRecipes.isNavOpen = true"
       icon="fa-solid fa-bars"
-      class="fixed left-2 top-2 text-xl text-slate-900 lg:hidden"
+      class="fixed left-2 top-2 text-2xl text-gray-500 lg:hidden"
     />
     <Navbar />
 
     <div class="flex">
       <img
+        @click="$router.push('/')"
         class="h-28 w-28 cursor-pointer"
         src="../assets/logo.png"
         alt="logo"

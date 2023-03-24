@@ -1,5 +1,20 @@
 <template>
   <div class="mt-16 sm:max-w-sm lg:w-72 xl:w-64">
+    <div
+      v-if="isCategoryPage"
+      class="mb-5 flex flex-col items-center gap-5 bg-gray-200 py-8"
+    >
+      <p class="text-base font-semibold">Subscribe to newsletter</p>
+      <input
+        type="text"
+        placeholder="E-MAIL"
+        class="h-12 w-48 border border-b-2 border-b-light-green py-3 px-4 text-sm font-semibold outline-none placeholder:text-xs placeholder:font-semibold placeholder:text-gray-600"
+      />
+      <primary-btn class="w-48">Subscribe</primary-btn>
+      <p class="mx-4 text-center text-xs text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
+    </div>
     <img src="../assets/sidebar image.png" alt="" />
     <sidebar-card
       v-for="card in sidebarCards"
@@ -12,6 +27,13 @@
 </template>
 
 <script setup lang="ts">
+const props = defineProps({
+  isCategoryPage: {
+    type: Boolean,
+    default: false,
+  },
+})
+
 import { ref } from "vue"
 
 const sidebarCards = ref<any[]>([

@@ -3,7 +3,6 @@
     class="mt-16 flex flex-col items-center justify-center gap-9 md:flex-row"
     :class="{
       'flex-col-reverse': !textRight,
-
       'md:flex-row-reverse': !textRight,
     }"
   >
@@ -28,9 +27,7 @@
         exercitationem facere non nobis fugit excepturi harum iusto at iure,
         praesentium quos incidunt earum. Eum, perferendis!
       </p>
-      <primary-btn class="mt-4 transition-all duration-500 hover:bg-black"
-        >Read More</primary-btn
-      >
+      <primary-btn class="mt-4">Read More</primary-btn>
     </div>
   </div>
 </template>

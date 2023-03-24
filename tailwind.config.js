@@ -18,6 +18,31 @@ module.exports = {
       brightness: {
         30: ".3",
       },
+      transformOrigin: {
+        "top-center": "top center",
+      },
+      keyframes: {
+        growOut: {
+          "0%": {
+            transform: "scale(0)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
+        growDown: {
+          "0%": {
+            transform: "scaleY(0)",
+          },
+          "100%": {
+            transform: "scaleY(1)",
+          },
+        },
+      },
+      animation: {
+        growDown: "growDown 300ms ease-in-out",
+        growOut: "growOut 300ms ease-in-out",
+      },
     },
   },
   plugins: [],

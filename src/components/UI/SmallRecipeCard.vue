@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-16 flex items-center justify-center gap-9">
+  <div class="mt-7 flex items-start justify-center gap-9">
     <img
       :src="imageSource"
       alt="recipeCardImg"
@@ -13,10 +13,9 @@
         {{ recipeTitle }}
       </button>
       <p class="text-sm text-gray-500">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquam
-        beatae tempore ipsa esse odit maiores atque eveniet! Corporis et maiores
-        non nulla vel facere quia maxime veritatis magni quisquam, itaque quod
-        cupiditate, voluptatem voluptas quis quam excepturi laborum aperiam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid vitae
+        fugit tempora pariatur deleniti incidunt, nihil maxime totam, quis
+        similique consequatur necessitatibus alias deserunt voluptatibus.
       </p>
     </div>
   </div>
