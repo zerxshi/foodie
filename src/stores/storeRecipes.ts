@@ -7,7 +7,7 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
   const app_id = ref<string>("35d84dc5")
   const app_key = ref<string>("5a6c0ee03b0775c1c82066e2548a8a11")
   let isNavOpen = ref<Boolean>(false)
-
+  let isModalOpen = ref<Boolean>(false)
   const getRecipes = async (): Promise<any> => {
     try {
       const postsResponse = await axios.get(
@@ -37,5 +37,6 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
     getRecipes,
     recipes,
     isNavOpen,
+    isModalOpen,
   }
 })

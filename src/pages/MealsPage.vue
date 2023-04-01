@@ -2,7 +2,7 @@
   <div class="flex justify-center">
     <div class="max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
       <div
-        class="m-8 mt-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-20"
+        class="m-4 mt-12 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-20"
       >
         <image-card
           :imageSource="'https://cdn.pixabay.com/photo/2017/08/02/00/51/food-2569257_960_720.jpg'"

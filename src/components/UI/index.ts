@@ -1,5 +1,4 @@
 import HeaderBtn from "@/components/UI/HeaderBtn.vue"
-import HeaderBtns from "@/components/UI/HeaderBtns.vue"
 import ImageCard from "@/components/UI/ImageCard.vue"
 import PrimaryBtn from "@/components/UI/PrimaryBtn.vue"
 import SmallBtn from "@/components/UI/SmallBtn.vue"
@@ -7,10 +6,10 @@ import RecipeCard from "@/components/UI/RecipeCard.vue"
 import SmallRecipeCard from "@/components/UI/SmallRecipeCard.vue"
 import SideBarCard from "@/components/UI/SideBarCard.vue"
 import InstImage from "@/components/UI/InstImage.vue"
+import CheckBox from "@/components/UI/CheckBox.vue"
 
 export default [
   HeaderBtn,
-  HeaderBtns,
   ImageCard,
   PrimaryBtn,
   SmallBtn,
@@ -18,4 +17,5 @@ export default [
   SmallRecipeCard,
   SideBarCard,
   InstImage,
+  CheckBox,
 ]

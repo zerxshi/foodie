@@ -4,6 +4,8 @@ import MealsPage from "@/pages/MealsPage.vue"
 import CuisinesPage from "@/pages/CuisinesPage.vue"
 import DishesPage from "@/pages/DishesPage.vue"
 import CategoryPage from "@/pages/CategoryPage.vue"
+import RecipePage from "@/pages/RecipePage.vue"
+import ContactPage from "@/pages/ContactPage.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,16 @@ const router = createRouter({
       path: "/category",
       name: "category",
       component: CategoryPage,
+    },
+    {
+      path: "/recipe",
+      name: "recipe",
+      component: RecipePage,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: ContactPage,
     },
   ],
 })

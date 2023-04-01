@@ -13,6 +13,12 @@ import {
   faChevronDown,
   faBars,
   faXmark,
+  faBowlFood,
+  faBowlRice,
+  faTemperatureLow,
+  faStopwatch,
+  faLocationDot,
+  faMobileScreenButton,
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebookF,
@@ -21,6 +27,7 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons"
 
 const app = createApp(App)
 
@@ -38,7 +45,14 @@ library.add(
   faAngleDown,
   faChevronDown,
   faBars,
-  faXmark
+  faXmark,
+  faStopwatch,
+  faBowlFood,
+  faBowlRice,
+  faTemperatureLow,
+  faLocationDot,
+  faMobileScreenButton,
+  faEnvelopeOpen
 )
 
 app

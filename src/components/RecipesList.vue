@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
+  <div class="max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
     <recipe-card
       v-for="(card, index) in recipeCards"
       :key="card"

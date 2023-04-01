@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 z-50 flex flex-col items-center bg-white shadow-lg shadow-gray-300 lg:flex-row lg:justify-between"
+    class="sticky top-0 z-2 flex flex-col items-center bg-white shadow-lg shadow-gray-300 lg:flex-row lg:justify-between"
   >
     <font-awesome-icon
       @click="storeRecipes.isNavOpen = true"
@@ -17,6 +17,7 @@
         alt="logo"
       />
       <button
+        @click="storeRecipes.isModalOpen = true"
         class="hidden font-semibold text-gray-500 hover:text-light-green lg:block"
       >
         Login / Register
@@ -24,7 +25,7 @@
     </div>
 
     <div class="hidden lg:block">
-      <header-btns />
+      <Header-btns />
     </div>
 
     <form class="mb-4 mt-2 flex items-center lg:mt-0 lg:mr-8 lg:mb-0">
@@ -43,8 +44,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue"
-import Navbar from "@/components/Navbar.vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
+import Navbar from "@/components/Navbar.vue"
+import HeaderBtns from "@/components/HeaderBtns.vue"
 
 const storeRecipes = useStoreRecipes()
 </script>

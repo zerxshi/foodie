@@ -18,7 +18,7 @@
       <button class="text-lg font-semibold lg:text-2xl">
         {{ recipeTitle }}
       </button>
-      <p class="text-center text-sm text-gray-500 xl:text-base">
+      <p class="text-center text-base text-gray-500">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus deserunt
         sit doloribus corrupti dolor culpa. Voluptas dolorum, aliquam
         accusantium voluptate aliquid aperiam commodi maxime natus fugit

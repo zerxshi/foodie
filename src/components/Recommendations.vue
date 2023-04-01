@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
+  <div class="max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
     <h1 class="mt-16 text-center text-3xl font-bold">Popular categories</h1>
     <div
       class="mt-6 flex flex-col items-center justify-center gap-7 lg:flex-row"

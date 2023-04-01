@@ -1,6 +1,6 @@
 <template>
   <Carousel />
-  <div class="m-8 flex flex-col items-center justify-center">
+  <div class="m-4 flex flex-col items-center justify-center">
     <Recommendations />
     <Recipes-list />
   </div>

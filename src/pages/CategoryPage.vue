@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-8 flex justify-center">
-    <div class="flex flex-col lg:flex-row">
-      <div class="lg:mr-10 lg:max-w-2xl xl:max-w-4xl">
+  <div class="mx-4 flex justify-center">
+    <div class="flex flex-col items-center lg:flex-row lg:items-start">
+      <div class="max-w-xl md:max-w-2xl lg:mr-10 xl:max-w-4xl">
         <sm-recipe-card
           v-for="card in smallRecipeCards"
           :key="card"
@@ -10,9 +10,7 @@
           :recipeTitle="card.recipeTitle"
         />
       </div>
-      <div>
-        <Side-bar :isCategoryPage="true" />
-      </div>
+      <Side-bar :isHomePage="false" />
     </div>
   </div>
   <div class="mt-16 flex justify-center gap-4">
