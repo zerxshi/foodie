@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-7 flex items-start justify-center gap-9">
+  <div class="flex items-start justify-center gap-9">
     <img
       :src="imageSource"
       alt="recipeCardImg"

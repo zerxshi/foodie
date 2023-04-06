@@ -1,38 +1,43 @@
 import { defineStore } from "pinia"
 import { ref, computed } from "vue"
 import axios from "axios"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "@/ts/firebase"
 
 export const useStoreRecipes = defineStore("storeRecipes", () => {
   let recipes = ref<any[]>([])
-  const app_id = ref<string>("35d84dc5")
-  const app_key = ref<string>("5a6c0ee03b0775c1c82066e2548a8a11")
   let isNavOpen = ref<Boolean>(false)
   let isModalOpen = ref<Boolean>(false)
-  const getRecipes = async (): Promise<any> => {
-    try {
-      const postsResponse = await axios.get(
-        `https://api.edamam.com/api/recipes/v2?type=public&app_id=${app_id.value}&app_key=${app_key.value}&health=vegetarian&cuisineType=Asian&mealType=Dinner&imageSize=LARGE&random=true`
-      )
-      recipes.value = postsResponse.data.hits
-    } catch (err) {
-      console.error(err)
-    }
-
-    // try {
-    //   const data = await fetch(
-    //     "https://api.edamam.com/api/recipes/v2?type=public&q=pizza&app_id=35d84dc5&app_key=%205a6c0ee03b0775c1c82066e2548a8a11"
-    //   )
-    //   const response = await data.json()
-    //   console.log(response)
-    // } catch (e) {
-    //   console.error(e)
-    // }
-    // fetch("https://api.edamam.com/api/recipes/v2")
-    //   .then((response) => response.json())
-    //   .then((response) => console.log(response))
-    //   .catch((err) => console.error(err))
+  interface recipe {
+    id: string
+    name: string
+    type: string
+    image: string
+    info: Array<string>
+    ingredients: Array<string>
+    steps: Array<string>
+    stepImages: Array<string>
+    stepNames: Array<string>
   }
-  const recipesToShow = computed<any>(() => recipes)
+  const getRecipes = async (): Promise<any> => {
+    const querySnapshot = await getDocs(collection(db, "breakfast"))
+    querySnapshot.forEach((doc) => {
+      let recipe: recipe = {
+        id: doc.id,
+        name: doc.data().name,
+        type: doc.data().type,
+        image: doc.data().image,
+        info: doc.data().info,
+        ingredients: doc.data().ingredients,
+        steps: doc.data().steps,
+        stepImages: doc.data().stepImages,
+        stepNames: doc.data().stepNames,
+      }
+      recipes.value.push(recipe)
+      console.log(recipes.value)
+    })
+  }
+
   return {
     getRecipes,
     recipes,

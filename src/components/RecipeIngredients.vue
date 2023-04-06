@@ -14,11 +14,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import CheckBox from "./UI/CheckBox.vue"
-export default {
-  components: { CheckBox },
-  name: "recipe-ingredients",
-}
-</script>

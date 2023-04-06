@@ -9,7 +9,7 @@
       :textRight="textPosition(index)"
     />
     <div class="mt-16 flex flex-col items-center lg:flex-row">
-      <div class="lg:mr-10 lg:max-w-2xl xl:max-w-4xl">
+      <div class="flex flex-col gap-7 lg:mr-10 lg:max-w-2xl xl:max-w-4xl">
         <sm-recipe-card
           v-for="card in smallRecipeCards"
           :key="card"

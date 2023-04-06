@@ -19,6 +19,7 @@ import {
   faStopwatch,
   faLocationDot,
   faMobileScreenButton,
+  faArrowsRotate,
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebookF,
@@ -52,7 +53,8 @@ library.add(
   faTemperatureLow,
   faLocationDot,
   faMobileScreenButton,
-  faEnvelopeOpen
+  faEnvelopeOpen,
+  faArrowsRotate
 )
 
 app

@@ -35,14 +35,8 @@
           icon="fa-solid fa-temperature-low"
           class="text-2xl text-gray-800"
         />
-        <p class="text-white">180°C</p></span
+        <p class="text-white">180ºF</p></span
       >
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: "recipe-info",
-}
-</script>

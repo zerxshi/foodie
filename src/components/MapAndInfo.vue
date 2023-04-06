@@ -36,12 +36,6 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: "map-and-info",
-}
-</script>
-
 <script setup lang="ts">
 import { GoogleMap, Marker } from "vue3-google-map"
 

@@ -28,9 +28,3 @@
     <header-btn @click="$router.push('/contact')">Contact us</header-btn>
   </div>
 </template>
-
-<script>
-export default {
-  name: "header-btns",
-}
-</script>

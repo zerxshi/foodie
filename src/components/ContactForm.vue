@@ -5,12 +5,12 @@
       <input
         type="text"
         placeholder="Name"
-        class="h-14 w-full border border-b-2 border-gray-300 py-4 px-7 text-sm font-semibold text-gray-400 outline-none transition-all duration-500 placeholder:text-xs placeholder:text-gray-500 focus:border-b-light-green"
+        class="h-14 w-full border border-b-2 border-gray-300 px-7 text-sm font-semibold text-gray-400 outline-none transition-all duration-500 placeholder:text-xs placeholder:text-gray-500 focus:border-b-light-green"
       />
       <input
         type="email"
-        placeholder="Email"
-        class="h-14 w-full border border-b-2 border-gray-300 py-4 px-7 text-sm font-semibold text-gray-400 outline-none transition-all duration-500 placeholder:text-xs placeholder:text-gray-500 focus:border-b-light-green"
+        placeholder="E-mail"
+        class="h-14 w-full border border-b-2 border-gray-300 px-7 text-sm font-semibold text-gray-400 outline-none transition-all duration-500 placeholder:text-xs placeholder:text-gray-500 focus:border-b-light-green"
       />
     </div>
     <textarea
@@ -24,11 +24,3 @@
     <primary-btn>Send</primary-btn>
   </div>
 </template>
-
-<script>
-import PrimaryBtn from "./UI/PrimaryBtn.vue"
-export default {
-  components: { PrimaryBtn },
-  name: "contact-form",
-}
-</script>

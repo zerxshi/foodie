@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-16 sm:max-w-sm lg:w-72 xl:w-64">
+  <div class="sm:max-w-sm lg:w-72 xl:w-64">
     <img src="../assets/sidebar image.png" alt="" />
 
     <sidebar-card
@@ -14,11 +14,11 @@
       v-if="!isHomePage"
       class="mt-5 flex flex-col items-center gap-5 bg-gray-100 py-8"
     >
-      <p class="text-base font-semibold">Subscribe to newsletter</p>
+      <p class="font-semibold">Subscribe to newsletter</p>
       <input
         type="email"
-        placeholder="E-MAIL"
-        class="h-12 w-48 border border-b-2 border-b-light-green px-5 text-sm font-semibold outline-none placeholder:text-xs placeholder:text-gray-500"
+        placeholder="E-mail"
+        class="h-12 w-48 border border-b-2 border-gray-300 px-7 text-sm font-semibold outline-none transition-all duration-500 placeholder:text-xs placeholder:text-gray-500 focus:border-b-light-green"
       />
       <primary-btn class="w-48">Subscribe</primary-btn>
       <p class="mx-4 text-center text-xs text-gray-500">

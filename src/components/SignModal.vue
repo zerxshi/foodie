@@ -54,12 +54,6 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: "sign-modal",
-}
-</script>
-
 <script setup lang="ts">
 import { useStoreRecipes } from "@/stores/storeRecipes"
 
