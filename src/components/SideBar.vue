@@ -1,6 +1,6 @@
 <template>
-  <div class="sm:max-w-sm lg:w-72 xl:w-64">
-    <img src="../assets/sidebar image.png" alt="" />
+  <div class="sm:max-w-xs lg:w-64">
+    <img src="@/assets/sidebar image.png" alt="" class="lg:w-72 xl:w-64" />
 
     <sidebar-card
       v-for="card in sidebarCards"
@@ -8,6 +8,7 @@
       :imageSource="card.imageSource"
       :recipeType="card.recipeType"
       :recipeTitle="card.recipeTitle"
+      :recipeId="card.recipeId"
     />
 
     <div
@@ -28,7 +29,16 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: "Side-bar",
+}
+</script>
+
 <script setup lang="ts">
+import { ref } from "vue"
+import { useStoreRecipes } from "@/stores/storeRecipes"
+
 const props = defineProps({
   isHomePage: {
     type: Boolean,
@@ -36,38 +46,45 @@ const props = defineProps({
   },
 })
 
-import { ref } from "vue"
+const storeRecipes = useStoreRecipes()
 
-const sidebarCards = ref<any[]>([
+interface card {
+  imageSource: string
+  recipeType: string
+  recipeTitle: string
+  recipeId: string
+}
+
+const sidebarCards = ref<card[]>([
   {
-    imageSource:
-      "https://cdn.pixabay.com/photo/2020/06/02/12/20/soup-5250765_960_720.jpg",
-    recipeType: "SOUP",
-    recipeTitle: "Vietnam soup",
+    imageSource: storeRecipes.recipes[11].image,
+    recipeType: storeRecipes.recipes[11].type,
+    recipeTitle: storeRecipes.recipes[11].name,
+    recipeId: storeRecipes.recipes[11].id,
   },
   {
-    imageSource:
-      "https://cdn.pixabay.com/photo/2016/11/21/15/41/appetizer-1846026_960_720.jpg",
-    recipeType: "SALAD",
-    recipeTitle: "Egg salad",
+    imageSource: storeRecipes.recipes[12].image,
+    recipeType: storeRecipes.recipes[12].type,
+    recipeTitle: storeRecipes.recipes[12].name,
+    recipeId: storeRecipes.recipes[12].id,
   },
   {
-    imageSource:
-      "https://cdn.pixabay.com/photo/2017/06/16/07/00/sandwich-2408026_960_720.jpg",
-    recipeType: "SANDWICHE",
-    recipeTitle: "Ham sandwich",
+    imageSource: storeRecipes.recipes[13].image,
+    recipeType: storeRecipes.recipes[13].type,
+    recipeTitle: storeRecipes.recipes[13].name,
+    recipeId: storeRecipes.recipes[13].id,
   },
   {
-    imageSource:
-      "https://cdn.pixabay.com/photo/2017/10/19/13/25/cheesecake-2867614_960_720.jpg",
-    recipeType: "DESSERT",
-    recipeTitle: "Cheesecake",
+    imageSource: storeRecipes.recipes[14].image,
+    recipeType: storeRecipes.recipes[14].type,
+    recipeTitle: storeRecipes.recipes[14].name,
+    recipeId: storeRecipes.recipes[14].id,
   },
   {
-    imageSource:
-      "https://cdn.pixabay.com/photo/2018/07/18/19/12/pasta-3547078_960_720.jpg",
-    recipeType: "PASTA",
-    recipeTitle: "Italian pasta",
+    imageSource: storeRecipes.recipes[15].image,
+    recipeType: storeRecipes.recipes[15].type,
+    recipeTitle: storeRecipes.recipes[15].name,
+    recipeId: storeRecipes.recipes[15].id,
   },
 ])
 </script>

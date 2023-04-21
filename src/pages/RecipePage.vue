@@ -1,22 +1,11 @@
 <template>
-  <div class="mx-4 mt-12 flex justify-center">
-    <div class="flex flex-col lg:flex-row">
+  <div v-if="exactRecipe" class="mx-4 mt-12 flex justify-center">
+    <div class="flex flex-col items-center lg:flex-row lg:items-start">
       <div
         class="flex max-w-lg flex-col gap-10 md:max-w-2xl lg:mr-10 xl:max-w-4xl"
       >
-        <div class="flex flex-col gap-10 lg:flex-row">
-          <img
-            src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg"
-            alt="salmonSteak"
-            class="lg:h-64 lg:max-w-xs xl:h-96 xl:max-w-md"
-          />
-          <Recipe-info />
-        </div>
-
-        <div class="flex flex-col gap-10 lg:flex-row">
-          <Recipe-instructions />
-          <Recipe-ingredients />
-        </div>
+        <Recipe-info-block :exactRecipe="exactRecipe" />
+        <Recipe-instructions-block :exactRecipe="exactRecipe" />
       </div>
 
       <Side-bar :isHomePage="false" />
@@ -25,8 +14,45 @@
 </template>
 
 <script setup lang="ts">
-import RecipeInfo from "@/components/RecipeInfo.vue"
-import RecipeInstructions from "@/components/RecipeInstructions.vue"
-import RecipeIngredients from "@/components/RecipeIngredients.vue"
+import { ref, onMounted } from "vue"
+import RecipeInfoBlock from "@/modules/RecipeInfoBlock/RecipeInfoBlock.vue"
+import RecipeInstructionsBlock from "@/modules/RecipeInstructionsBlock/RecipeInstructionsBlock.vue"
 import SideBar from "@/components/SideBar.vue"
+import { useStoreRecipes } from "@/stores/storeRecipes"
+import { useRoute } from "vue-router"
+
+const storeRecipes = useStoreRecipes()
+
+const route = useRoute()
+
+interface recipe {
+  id: string
+  name: string
+  type: string
+  image: string
+  description: string
+  info: Array<string>
+  ingredients: Array<string>
+  steps: Array<string>
+  stepImages: Array<string>
+  stepNames: Array<string>
+}
+
+let exactRecipe = ref<recipe>()
+
+const findRecipe = () => {
+  storeRecipes.recipes.forEach((recipe: recipe) => {
+    if (recipe.id == route.params.recipeId) {
+      exactRecipe.value = recipe
+    }
+  })
+}
+
+onMounted(() => {
+  let timeout = setInterval(() => {
+    if (storeRecipes.recipes.length) {
+      findRecipe()
+    }
+  }, 100)
+})
 </script>

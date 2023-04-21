@@ -1,14 +1,16 @@
 <template>
-  <Carousel />
-  <div class="mx-4 flex flex-col items-center justify-center">
-    <Recommendations />
+  <div v-if="storeRecipes.recipes.length">
+    <Carousel />
+    <Category-recs />
     <Recipes-list />
   </div>
 </template>
 
 <script setup lang="ts">
-import RandomAndSearch from "@/components/RandomAndSearch.vue"
-import Carousel from "@/components/Carousel.vue"
-import Recommendations from "@/components/Recommendations.vue"
-import RecipesList from "@/components/RecipesList.vue"
+import Carousel from "@/modules/Carousel.vue"
+import CategoryRecs from "@/modules/CategoryRecs/CategoryRecs.vue"
+import RecipesList from "@/modules/RecipesList/RecipesList.vue"
+import { useStoreRecipes } from "@/stores/storeRecipes"
+
+const storeRecipes = useStoreRecipes()
 </script>

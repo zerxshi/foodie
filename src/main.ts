@@ -3,7 +3,7 @@ import { createPinia } from "pinia"
 import App from "@/App.vue"
 import router from "@/router/router"
 import "@/assets/main.css"
-import components from "@/components/UI"
+import components from "@/ts/exports"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import {
@@ -29,12 +29,15 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons"
+import VueAwesomePaginate from "vue-awesome-paginate"
+import "vue-awesome-paginate/dist/style.css"
 
 const app = createApp(App)
 
 components.forEach((component) => {
   app.component(component.name, component)
 })
+
 library.add(
   faMagnifyingGlass,
   faSquareInstagram,
@@ -61,4 +64,5 @@ app
   .component("font-awesome-icon", FontAwesomeIcon)
   .use(createPinia())
   .use(router)
+  .use(VueAwesomePaginate)
   .mount("#app")
