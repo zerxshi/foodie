@@ -36,19 +36,7 @@ export default {
 <script setup lang="ts">
 import { computed } from "@vue/runtime-core"
 import { useRouter } from "vue-router"
-import { useStoreRecipes } from "@/stores/storeRecipes"
-
-const router = useRouter()
-
-const storeRecipes = useStoreRecipes()
-
-const chooseRoute = (id: string, title: string): void => {
-  if (props.slide) {
-    router.push(`/recipe/${id}`)
-  } else {
-    router.push(`/category/${storeRecipes.splitCategory(title)}`)
-  }
-}
+import { useStoreFilters } from "@/stores/storeFilters"
 
 const props = defineProps({
   imageSource: {
@@ -59,7 +47,20 @@ const props = defineProps({
   cardTitle: String,
   cardId: String,
   slide: Boolean,
+  active: Boolean,
 })
+
+const router = useRouter()
+
+const storeFilters = useStoreFilters()
+
+const chooseRoute = (id: string, title: string): void => {
+  if (props.slide) {
+    router.push(`/recipe/${id}`)
+  } else {
+    router.push(`/category/${storeFilters.splitCategory(title)}`)
+  }
+}
 </script>
 
 <style scoped>

@@ -20,15 +20,17 @@ import {
   faLocationDot,
   faMobileScreenButton,
   faArrowsRotate,
+  faHeart as solidHeart,
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebookF,
+  faInstagram,
   faPinterest,
   faSquareInstagram,
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons"
+import { faEnvelopeOpen, faHeart } from "@fortawesome/free-regular-svg-icons"
 import VueAwesomePaginate from "vue-awesome-paginate"
 import "vue-awesome-paginate/dist/style.css"
 
@@ -57,7 +59,11 @@ library.add(
   faLocationDot,
   faMobileScreenButton,
   faEnvelopeOpen,
-  faArrowsRotate
+  faArrowsRotate,
+  faHeart,
+  faHeart,
+  solidHeart,
+  faInstagram
 )
 
 app

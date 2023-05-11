@@ -7,11 +7,6 @@
         <check-box v-for="ingredient in ingredients" :key="ingredient">{{
           ingredient
         }}</check-box>
-        <!-- <check-box>2 yogurt containers</check-box>
-        <check-box>1.5 yogurt containers milk</check-box>
-        <check-box>2 yogurt containers unbleached white flour</check-box>
-        <check-box>1/4 tsp cinnamon</check-box>
-        <check-box>1 cup fresh blueberries</check-box> -->
       </div>
     </div>
   </div>

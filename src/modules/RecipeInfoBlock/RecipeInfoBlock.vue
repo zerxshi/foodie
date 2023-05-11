@@ -5,7 +5,7 @@
       alt="salmonSteak"
       class="lg:h-60 lg:max-w-xs xl:h-80 xl:max-w-md"
     />
-    <Recipe-info :info="exactRecipe.info" />
+    <Recipe-info :exactRecipe="exactRecipe" />
   </div>
 </template>
 

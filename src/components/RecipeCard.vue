@@ -12,6 +12,7 @@
       alt="recipeCardImg"
       class="md:max-w-xs lg:max-w-md xl:max-w-xl"
     />
+
     <div class="flex flex-col items-center gap-3">
       <button
         @click="

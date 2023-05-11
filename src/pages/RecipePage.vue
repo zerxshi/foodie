@@ -51,6 +51,7 @@ const findRecipe = () => {
 onMounted(() => {
   let timeout = setInterval(() => {
     if (storeRecipes.recipes.length) {
+      clearInterval(timeout)
       findRecipe()
     }
   }, 100)

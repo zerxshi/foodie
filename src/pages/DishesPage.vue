@@ -9,7 +9,7 @@
           :key="card"
           @click="
             $router.push(
-              `/category/${storeRecipes.splitCategory(card.cardTitle)}`
+              `/category/${storeFilters.splitCategory(card.cardTitle)}`
             )
           "
           :imageSource="card.imageSource"
@@ -24,9 +24,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue"
-import { useStoreRecipes } from "@/stores/storeRecipes"
+import { useStoreFilters } from "@/stores/storeFilters"
 
-const storeRecipes = useStoreRecipes()
+const storeFilters = useStoreFilters()
 
 interface card {
   imageSource: string

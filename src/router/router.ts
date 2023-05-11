@@ -5,8 +5,11 @@ import MealsPage from "@/pages/MealsPage.vue"
 import CuisinesPage from "@/pages/CuisinesPage.vue"
 import DishesPage from "@/pages/DishesPage.vue"
 import CategoryPage from "@/pages/CategoryPage.vue"
+import SavedRecipesPage from "@/pages/SavedRecipesPage.vue"
+import FilteredRecipesPage from "@/pages/FilteredRecipesPage.vue"
 import RecipePage from "@/pages/RecipePage.vue"
 import ContactPage from "@/pages/ContactPage.vue"
+import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,6 +38,16 @@ const routes: Array<RouteRecordRaw> = [
     component: CategoryPage,
   },
   {
+    path: "/saved-recipes",
+    name: "saved-recipes",
+    component: SavedRecipesPage,
+  },
+  {
+    path: "/filtered-recipes",
+    name: "filtered-recipes",
+    component: FilteredRecipesPage,
+  },
+  {
     path: "/recipe/:recipeId",
     name: "recipe",
     component: RecipePage,
@@ -49,6 +62,18 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
+})
+
+router.afterEach((to, from) => {
+  const storeRecipes = useStoreRecipes()
+  if (from.name == "filtered-recipes") storeRecipes.searchQuery = ""
 })
 
 export default router

@@ -4,10 +4,7 @@
     <div class="relative inline-block">
       <header-btn class="group"
         >Categories
-        <font-awesome-icon
-          icon="fa-solid fa-angle-down"
-          class="text-base text-slate-600 group-hover:text-light-green"
-        />
+        <font-awesome-icon icon="fa-solid fa-angle-down" class="h-4" />
         <div
           class="absolute z-2 hidden origin-top-center animate-growOut flex-col bg-white shadow-2xl group-hover:flex"
         >

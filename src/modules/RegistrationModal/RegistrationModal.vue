@@ -5,11 +5,11 @@
       leave-active-class="animate-closeModal"
     >
       <div
-        v-if="storeRecipes.isModalOpen"
-        class="fixed top-1/2 left-1/2 z-50 h-96 w-90 -translate-x-1/2 -translate-y-1/2 border border-gray-300 bg-white transition-all duration-500 ease-in-out"
+        v-if="storeAuth.regModalOpen"
+        class="fixed top-1/2 left-1/2 z-50 flex w-90 -translate-x-1/2 -translate-y-1/2 flex-col border border-gray-300 bg-white"
       >
         <Registration-modal-btns />
-        <Registration-modal-inputs />
+        <Registration-modal-form />
       </div>
     </transition>
     <Registration-modal-overlay />
@@ -18,9 +18,9 @@
 
 <script setup lang="ts">
 import RegistrationModalBtns from "@/modules/RegistrationModal/components/RegistrationModalBtns.vue"
-import RegistrationModalInputs from "@/modules/RegistrationModal/components/RegistrationModalInputs.vue"
+import RegistrationModalForm from "@/modules/RegistrationModal/components/RegistrationModalForm.vue"
 import RegistrationModalOverlay from "@/modules/RegistrationModal/components/RegistrationModalOverlay.vue"
-import { useStoreRecipes } from "@/stores/storeRecipes"
+import { useStoreAuth } from "@/stores/storeAuth"
 
-const storeRecipes = useStoreRecipes()
+const storeAuth = useStoreAuth()
 </script>

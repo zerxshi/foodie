@@ -18,8 +18,8 @@
 
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css"
-import { onMounted, ref } from "vue"
 import { Carousel, Slide, Navigation } from "vue3-carousel"
+import { onMounted, ref } from "vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const storeRecipes = useStoreRecipes()
@@ -36,14 +36,16 @@ const breakPoints = ref({
 
 <style scoped>
 .carousel__slide {
-  padding: 33px;
+  padding: 35px;
 }
 
 .carousel__slide--prev {
+  pointer-events: none;
   filter: brightness(65%);
 }
 
 .carousel__slide--next {
+  pointer-events: none;
   filter: brightness(65%);
 }
 

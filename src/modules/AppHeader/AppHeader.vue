@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from "@/modules/AppHeader/components/Navbar.vue"
+import Navbar from "@/modules/Navbar.vue/Navbar.vue"
 import HeaderBtns from "@/modules/AppHeader/components/HeaderBtns.vue"
 import HeaderInputForm from "@/modules/AppHeader/components/HeaderInputForm.vue"
 import LogoBlock from "@/modules/AppHeader/components/LogoBlock.vue"
