@@ -25,11 +25,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, type PropType } from "vue"
+
+interface recipe {
+  id: string
+  name: string
+  type: string
+  image: string
+  description: string
+  info: Array<string>
+  ingredients: Array<string>
+  steps: Array<string>
+  stepImages: Array<string>
+  stepNames: Array<string>
+  saved?: boolean
+}
 
 const props = defineProps({
   recipesPortion: {
-    type: Array,
+    type: Array as PropType<recipe[]>,
     required: true,
   },
   totalItems: {

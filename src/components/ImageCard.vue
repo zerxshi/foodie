@@ -54,11 +54,14 @@ const router = useRouter()
 
 const storeFilters = useStoreFilters()
 
-const chooseRoute = (id: string, title: string): void => {
-  if (props.slide) {
+const chooseRoute = (
+  id: string | undefined,
+  title: string | undefined
+): void => {
+  if (props.slide && id) {
     router.push(`/recipe/${id}`)
   } else {
-    router.push(`/category/${storeFilters.splitCategory(title)}`)
+    if (title) router.push(`/category/${storeFilters.splitCategory(title)}`)
   }
 }
 </script>

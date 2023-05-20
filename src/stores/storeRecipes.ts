@@ -1,6 +1,15 @@
 import { defineStore } from "pinia"
 import { ref } from "vue"
-import { collection, getDocs, setDoc, doc, deleteDoc } from "firebase/firestore"
+import {
+  collection,
+  getDocs,
+  onSnapshot,
+  setDoc,
+  doc,
+  deleteDoc,
+  orderBy,
+  query,
+} from "firebase/firestore"
 import { db } from "@/ts/firebase"
 import { useStoreAuth } from "./storeAuth"
 
@@ -50,6 +59,7 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
       }
       recipes.value.push(recipe)
     })
+
     shuffleArr(recipes.value)
   }
 
@@ -69,14 +79,10 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
       stepNames: recipe!.stepNames,
       saved: true,
     })
-    savedRecipes.value.push(recipe)
   }
 
   const deleteRecipe = async (recipeId: string): Promise<any> => {
     await deleteDoc(doc(usersCollectionRef, recipeId))
-    savedRecipes.value = savedRecipes.value.filter(
-      (recipe) => recipe.id !== recipeId
-    )
   }
 
   let isSavedRecipesEmpty = ref<Boolean>(false)
@@ -90,22 +96,43 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
       "likedRecipes"
     )
 
-    const querySnapshot = await getDocs(usersCollectionRef)
-    querySnapshot.forEach((doc) => {
-      let recipe: recipe = {
-        id: doc.id,
-        name: doc.data().name,
-        type: doc.data().type,
-        image: doc.data().image,
-        description: doc.data().description,
-        info: doc.data().info,
-        ingredients: doc.data().ingredients,
-        steps: doc.data().steps,
-        stepImages: doc.data().stepImages,
-        stepNames: doc.data().stepNames,
-      }
-      savedRecipes.value.push(recipe)
+    // const querySnapshot = await getDocs(usersCollectionRef)
+    // querySnapshot.forEach((doc) => {
+    //   let recipe: recipe = {
+    //     id: doc.id,
+    //     name: doc.data().name,
+    //     type: doc.data().type,
+    //     image: doc.data().image,
+    //     description: doc.data().description,
+    //     info: doc.data().info,
+    //     ingredients: doc.data().ingredients,
+    //     steps: doc.data().steps,
+    //     stepImages: doc.data().stepImages,
+    //     stepNames: doc.data().stepNames,
+    //   }
+    //   savedRecipes.value.push(recipe)
+    // })
+
+    onSnapshot(query(usersCollectionRef, orderBy("name")), (querySnapshot) => {
+      let newSavedRecipes = ref<recipe[]>([])
+      querySnapshot.forEach((doc: any) => {
+        let recipe: recipe = {
+          id: doc.id,
+          name: doc.data().name,
+          type: doc.data().type,
+          image: doc.data().image,
+          description: doc.data().description,
+          info: doc.data().info,
+          ingredients: doc.data().ingredients,
+          steps: doc.data().steps,
+          stepImages: doc.data().stepImages,
+          stepNames: doc.data().stepNames,
+        }
+        newSavedRecipes.value.push(recipe)
+      })
+      savedRecipes.value = newSavedRecipes.value
     })
+
     if (savedRecipes.value.length === 0) isSavedRecipesEmpty.value = true
   }
 

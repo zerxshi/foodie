@@ -9,7 +9,7 @@
     <div class="flex flex-col items-start gap-3">
       <button
         @click="
-          $router.push(`/category/${storeRecipes.splitCategory(recipeType)}`)
+          $router.push(`/category/${storeFilters.splitCategory(recipeType)}`)
         "
         class="text-xs font-semibold text-light-green"
       >
@@ -17,7 +17,7 @@
       </button>
       <button
         @click="$router.push(`/recipe/${recipeId}`)"
-        class="text-lg font-semibold xl:text-2xl"
+        class="text-left text-lg font-semibold xl:text-2xl"
       >
         {{ recipeTitle }}
       </button>
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { useStoreRecipes } from "@/stores/storeRecipes"
+import { useStoreFilters } from "@/stores/storeFilters"
 
 const props = defineProps({
   imageSource: String,
@@ -45,5 +45,5 @@ const props = defineProps({
   recipeId: String,
 })
 
-const storeRecipes = useStoreRecipes()
+const storeFilters = useStoreFilters()
 </script>

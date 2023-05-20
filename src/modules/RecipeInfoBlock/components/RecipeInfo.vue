@@ -66,7 +66,10 @@ import { useStoreRecipes } from "@/stores/storeRecipes"
 import { onMounted, onUpdated, ref } from "vue"
 
 const props = defineProps({
-  exactRecipe: Object,
+  exactRecipe: {
+    type: Object,
+    required: true,
+  },
 })
 
 const storeAuth = useStoreAuth()

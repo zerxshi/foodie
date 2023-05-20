@@ -1,6 +1,6 @@
 <template>
   <div class="sm:max-w-xs lg:w-64">
-    <img src="@/assets/sidebar image.png" alt="" class="lg:w-72 xl:w-64" />
+    <img src="@/assets/sidebar-image.png" alt="" class="lg:w-72 xl:w-64" />
 
     <sidebar-card
       v-for="card in sidebarCards"

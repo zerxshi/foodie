@@ -17,7 +17,10 @@ import RecipeIngredients from "@/modules/RecipeInstructionsBlock/components/Reci
 import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const props = defineProps({
-  exactRecipe: Object,
+  exactRecipe: {
+    type: Object,
+    required: true,
+  },
 })
 
 const storeRecipes = useStoreRecipes()

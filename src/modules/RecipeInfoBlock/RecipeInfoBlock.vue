@@ -11,10 +11,14 @@
 
 <script setup lang="ts">
 import RecipeInfo from "@/modules/RecipeInfoBlock/components/RecipeInfo.vue"
+import type { PropType } from "vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const props = defineProps({
-  exactRecipe: Object,
+  exactRecipe: {
+    type: Object,
+    required: true,
+  },
 })
 
 const storeRecipes = useStoreRecipes()

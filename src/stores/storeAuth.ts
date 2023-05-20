@@ -7,6 +7,10 @@ import {
   signOut,
   onAuthStateChanged,
   updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup,
+  TwitterAuthProvider,
+  FacebookAuthProvider,
 } from "firebase/auth"
 import { useStoreRecipes } from "./storeRecipes"
 
@@ -133,6 +137,91 @@ export const useStoreAuth = defineStore("storeAuth", () => {
     }
   }
 
+  const googleProvider = new GoogleAuthProvider()
+
+  const signWithGoogle = (): void => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        const token = credential!.accessToken
+        // The signed-in user info.
+        const user = result.user
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        console.log(user)
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.customData.email
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error)
+        console.log(errorMessage)
+        // ...
+      })
+  }
+
+  const twitterProvider = new TwitterAuthProvider()
+
+  const signWithTwitter = (): void => {
+    signInWithPopup(auth, twitterProvider)
+      .then((result) => {
+        // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+        // You can use these server side with your app's credentials to access the Twitter API.
+        const credential = TwitterAuthProvider.credentialFromResult(result)
+        const token = credential!.accessToken
+        const secret = credential!.secret
+
+        // The signed-in user info.
+        const user = result.user
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        console.log(user)
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.customData.email
+        // The AuthCredential type that was used.
+        const credential = TwitterAuthProvider.credentialFromError(error)
+        console.log(errorMessage)
+        // ...
+      })
+  }
+
+  const facebookProvider = new FacebookAuthProvider()
+
+  const signWithFacebook = (): void => {
+    signInWithPopup(auth, facebookProvider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user
+
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result)
+        const accessToken = credential!.accessToken
+
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.customData.email
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error)
+        console.log(errorMessage)
+        // ...
+      })
+  }
+
   return {
     register,
     regModalOpen,
@@ -145,5 +234,8 @@ export const useStoreAuth = defineStore("storeAuth", () => {
     init,
     onSubmit,
     logoutUser,
+    signWithGoogle,
+    signWithTwitter,
+    signWithFacebook,
   }
 })

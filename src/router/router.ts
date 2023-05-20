@@ -9,7 +9,7 @@ import SavedRecipesPage from "@/pages/SavedRecipesPage.vue"
 import FilteredRecipesPage from "@/pages/FilteredRecipesPage.vue"
 import RecipePage from "@/pages/RecipePage.vue"
 import ContactPage from "@/pages/ContactPage.vue"
-import { useStoreRecipes } from "@/stores/storeRecipes"
+import { useStoreFilters } from "@/stores/storeFilters"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -72,8 +72,8 @@ const router = createRouter({
 })
 
 router.afterEach((to, from) => {
-  const storeRecipes = useStoreRecipes()
-  if (from.name == "filtered-recipes") storeRecipes.searchQuery = ""
+  const storeFilters = useStoreFilters()
+  if (from.name == "filtered-recipes") storeFilters.searchQuery = ""
 })
 
 export default router

@@ -2,7 +2,11 @@
   <div class="flex flex-col items-start gap-5 lg:max-w-xs xl:max-w-md">
     <button class="text-xs font-semibold text-light-green">{{ type }}</button>
     <p class="text-lg font-semibold lg:text-2xl">{{ name }}</p>
-    <div v-for="(step, index) in steps" :key="step" class="flex flex-col gap-5">
+    <div
+      v-for="(step, index) in steps"
+      :key="index"
+      class="flex flex-col gap-5"
+    >
       <h1 class="text-xl font-semibold">{{ stepNames[index] }}</h1>
       <p class="text-base text-gray-500">
         {{ step }}
@@ -13,7 +17,20 @@
 </template>
 
 <script setup lang="ts">
-import { useStoreRecipes } from "@/stores/storeRecipes"
+import type { PropType } from "vue"
+
+interface recipe {
+  id: string
+  name: string
+  type: string
+  image: string
+  description: string
+  info: Array<string>
+  ingredients: Array<string>
+  steps: Array<string>
+  stepImages: Array<string>
+  stepNames: Array<string>
+}
 
 const props = defineProps({
   name: {
@@ -33,7 +50,7 @@ const props = defineProps({
     required: true,
   },
   stepImages: {
-    type: Array,
+    type: Array as PropType<string[]>,
     required: true,
   },
 })

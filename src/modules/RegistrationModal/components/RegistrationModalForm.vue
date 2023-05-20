@@ -28,14 +28,31 @@
       type="password"
       placeholder="Password"
     />
+
     <p v-if="storeAuth.validationError" class="text-base">
       Please fill in all fields!
     </p>
+
     <button
-      class="h-14 w-56 bg-light-green text-white transition-all duration-500 hover:bg-black"
+      class="mt-2 h-14 w-56 bg-light-green text-white transition-all duration-500 hover:bg-black"
     >
       Submit
     </button>
+
+    <div class="mt-4 flex gap-8 text-2xl text-gray-800">
+      <font-awesome-icon
+        @click="storeAuth.signWithGoogle"
+        icon="fa-brands fa-google"
+      />
+      <font-awesome-icon
+        @click="storeAuth.signWithTwitter"
+        icon="fa-brands fa-twitter"
+      />
+      <font-awesome-icon
+        @click="storeAuth.signWithFacebook"
+        icon="fa-brands fa-facebook-f"
+      />
+    </div>
   </form>
 </template>
 

@@ -31,8 +31,6 @@
         >
       </div>
     </logo-block-btn>
-
-    <!-- <button @click="storeAuth.logoutUser">Logout</button> -->
   </div>
 </template>
 

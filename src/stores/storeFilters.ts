@@ -19,8 +19,8 @@ export const useStoreFilters = defineStore("storeFilters", () => {
     saved?: boolean
   }
 
-  const splitCategory = (title: string): string => {
-    return title.split(" ")[0].toLowerCase()
+  const splitCategory = (title: string | undefined): string => {
+    return title!.split(" ")[0].toLowerCase()
   }
 
   const searchQuery = ref<string>("")

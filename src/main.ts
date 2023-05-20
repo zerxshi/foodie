@@ -24,6 +24,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebookF,
+  faGoogle,
   faInstagram,
   faPinterest,
   faSquareInstagram,
@@ -63,7 +64,8 @@ library.add(
   faHeart,
   faHeart,
   solidHeart,
-  faInstagram
+  faInstagram,
+  faGoogle
 )
 
 app
