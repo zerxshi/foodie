@@ -36,7 +36,13 @@ const breakPoints = ref({
 
 <style scoped>
 .carousel__slide {
-  padding: 35px;
+  padding: 20px;
+}
+
+@media (min-width: 1610px) {
+  .carousel__slide {
+    padding: 31px;
+  }
 }
 
 .carousel__slide--prev {

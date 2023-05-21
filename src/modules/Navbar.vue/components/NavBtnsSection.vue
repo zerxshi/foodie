@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <nav-btn-container>
-      <header-btn @click="$router.push('/')" class="m-0">Home</header-btn>
+      <header-btn @click="routeClickHandler('/')" class="m-0">Home</header-btn>
     </nav-btn-container>
 
     <nav-btn-container>
@@ -21,22 +21,22 @@
       leave-active-class="animate-shrinkUp"
     >
       <div class="origin-top-center bg-white" v-if="isCategoryListOpen">
-        <header-btn @click="$router.push('/meals')" class="text-sm"
+        <header-btn @click="routeClickHandler('/meals')" class="text-sm"
           >Meal type</header-btn
         >
         <hr />
-        <header-btn @click="$router.push('/dishes')" class="text-sm"
+        <header-btn @click="routeClickHandler('/dishes')" class="text-sm"
           >Dish type</header-btn
         >
         <hr />
-        <header-btn @click="$router.push('/cuisines')" class="text-sm"
+        <header-btn @click="routeClickHandler('/cuisines')" class="text-sm"
           >Cuisine type</header-btn
         >
       </div>
     </transition>
 
     <nav-btn-container>
-      <header-btn @click="$router.push('/contact')" class="m-0"
+      <header-btn @click="routeClickHandler('/contact')" class="m-0"
         >Contact us</header-btn
       >
     </nav-btn-container>
@@ -44,7 +44,18 @@
 </template>
 
 <script setup lang="ts">
+import { useStoreRecipes } from "@/stores/storeRecipes"
 import { ref } from "vue"
+import { useRouter } from "vue-router"
 
 const isCategoryListOpen = ref<Boolean>(false)
+
+const storeRecipes = useStoreRecipes()
+
+const router = useRouter()
+
+const routeClickHandler = (route: string) => {
+  router.push(route)
+  storeRecipes.isNavOpen = false
+}
 </script>

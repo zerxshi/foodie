@@ -96,23 +96,6 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
       "likedRecipes"
     )
 
-    // const querySnapshot = await getDocs(usersCollectionRef)
-    // querySnapshot.forEach((doc) => {
-    //   let recipe: recipe = {
-    //     id: doc.id,
-    //     name: doc.data().name,
-    //     type: doc.data().type,
-    //     image: doc.data().image,
-    //     description: doc.data().description,
-    //     info: doc.data().info,
-    //     ingredients: doc.data().ingredients,
-    //     steps: doc.data().steps,
-    //     stepImages: doc.data().stepImages,
-    //     stepNames: doc.data().stepNames,
-    //   }
-    //   savedRecipes.value.push(recipe)
-    // })
-
     onSnapshot(query(usersCollectionRef, orderBy("name")), (querySnapshot) => {
       let newSavedRecipes = ref<recipe[]>([])
       querySnapshot.forEach((doc: any) => {

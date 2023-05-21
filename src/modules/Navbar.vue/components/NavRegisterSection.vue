@@ -26,7 +26,7 @@
         class="absolute origin-top-center flex-col bg-white px-6"
       >
         <button
-          @click="$router.push('/saved-recipes')"
+          @click="routeClickHandler('/saved-recipes')"
           class="h-9 text-sm font-semibold text-gray-500 transition-all duration-500 hover:text-light-green"
         >
           Saved recipes
@@ -46,13 +46,24 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { useStoreAuth } from "@/stores/storeAuth"
+import { useStoreRecipes } from "@/stores/storeRecipes"
+import { useRouter } from "vue-router"
 
 const storeAuth = useStoreAuth()
+const storeRecipes = useStoreRecipes()
+
+const isRegisterListOpen = ref<Boolean>(false)
 
 const logOutClickHandler = (): void => {
   storeAuth.logoutUser()
   isRegisterListOpen.value = false
+  storeRecipes.isNavOpen = false
 }
 
-const isRegisterListOpen = ref<Boolean>(false)
+const router = useRouter()
+
+const routeClickHandler = (route: string) => {
+  router.push(route)
+  storeRecipes.isNavOpen = false
+}
 </script>

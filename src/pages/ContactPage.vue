@@ -3,7 +3,7 @@
     v-if="storeRecipes.recipes.length"
     class="mx-4 mt-12 flex justify-center"
   >
-    <div class="flex flex-col items-center lg:flex-row lg:items-start">
+    <div class="flex flex-col items-center gap-7 lg:flex-row lg:items-start">
       <div
         class="flex max-w-lg flex-col gap-10 md:max-w-2xl lg:mr-10 xl:max-w-4xl"
       >
