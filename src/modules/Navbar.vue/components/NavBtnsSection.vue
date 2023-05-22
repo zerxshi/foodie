@@ -44,8 +44,8 @@
 </template>
 
 <script setup lang="ts">
-import { useStoreRecipes } from "@/stores/storeRecipes"
 import { ref } from "vue"
+import { useStoreRecipes } from "@/stores/storeRecipes"
 import { useRouter } from "vue-router"
 
 const isCategoryListOpen = ref<Boolean>(false)

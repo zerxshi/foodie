@@ -13,28 +13,28 @@ import {
 import { db } from "@/ts/firebase"
 import { useStoreAuth } from "./storeAuth"
 
-export const useStoreRecipes = defineStore("storeRecipes", () => {
-  interface recipe {
-    id: string
-    name: string
-    type: string
-    image: string
-    description: string
-    info: Array<string>
-    ingredients: Array<string>
-    steps: Array<string>
-    stepImages: Array<string>
-    stepNames: Array<string>
-    saved?: boolean
-  }
+export interface recipe {
+  id: string
+  name: string
+  type: string
+  image: string
+  description: string
+  info: Array<string>
+  ingredients: Array<string>
+  steps: Array<string>
+  stepImages: Array<string>
+  stepNames: Array<string>
+  saved?: boolean
+}
 
+export const useStoreRecipes = defineStore("storeRecipes", () => {
   const recipes = ref<recipe[]>([])
   const savedRecipes = ref<recipe[]>([])
-  let isNavOpen = ref<boolean>(false)
   const recipesCollectionRef = collection(db, "recipes")
+  const isNavOpen = ref<boolean>(false)
   let usersCollectionRef: any
 
-  const shuffleArr = (array: any[]): void => {
+  const shuffleArr = (array: recipe[]): void => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
       ;[array[i], array[j]] = [array[j], array[i]]
@@ -44,7 +44,6 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
   const getRecipes = async (): Promise<any> => {
     const querySnapshot = await getDocs(recipesCollectionRef)
     querySnapshot.forEach((doc) => {
-      // console.log(doc.id, " => ", doc.data())
       let recipe: recipe = {
         id: doc.id,
         name: doc.data().name,
@@ -63,29 +62,7 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
     shuffleArr(recipes.value)
   }
 
-  const saveRecipe = async (
-    recipe: recipe | Record<string, any> | undefined
-  ): Promise<any> => {
-    await setDoc(doc(usersCollectionRef, recipe!.id), {
-      id: recipe!.id,
-      name: recipe!.name,
-      type: recipe!.type,
-      image: recipe!.image,
-      description: recipe!.description,
-      info: recipe!.info,
-      ingredients: recipe!.ingredients,
-      steps: recipe!.steps,
-      stepImages: recipe!.stepImages,
-      stepNames: recipe!.stepNames,
-      saved: true,
-    })
-  }
-
-  const deleteRecipe = async (recipeId: string): Promise<any> => {
-    await deleteDoc(doc(usersCollectionRef, recipeId))
-  }
-
-  let isSavedRecipesEmpty = ref<Boolean>(false)
+  const isSavedRecipesEmpty = ref<Boolean>(false)
 
   const getSavedRecipes = async (): Promise<any> => {
     const storeAuth = useStoreAuth()
@@ -117,6 +94,28 @@ export const useStoreRecipes = defineStore("storeRecipes", () => {
     })
 
     if (savedRecipes.value.length === 0) isSavedRecipesEmpty.value = true
+  }
+
+  const saveRecipe = async (
+    recipe: recipe | Record<string, any> | undefined
+  ): Promise<any> => {
+    await setDoc(doc(usersCollectionRef, recipe!.id), {
+      id: recipe!.id,
+      name: recipe!.name,
+      type: recipe!.type,
+      image: recipe!.image,
+      description: recipe!.description,
+      info: recipe!.info,
+      ingredients: recipe!.ingredients,
+      steps: recipe!.steps,
+      stepImages: recipe!.stepImages,
+      stepNames: recipe!.stepNames,
+      saved: true,
+    })
+  }
+
+  const deleteRecipe = async (recipeId: string): Promise<any> => {
+    await deleteDoc(doc(usersCollectionRef, recipeId))
   }
 
   return {

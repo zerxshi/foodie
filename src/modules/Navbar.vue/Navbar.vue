@@ -27,5 +27,3 @@ import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const storeRecipes = useStoreRecipes()
 </script>
-
-<style scoped></style>

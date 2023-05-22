@@ -16,14 +16,12 @@
 
 <script setup lang="ts">
 import smRecipeCardList from "@/components/SmRecipeCardList.vue"
-import { onMounted, ref } from "vue"
+import { onMounted } from "vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
 import { useStorePagination } from "@/stores/storePagination"
 
 const storeRecipes = useStoreRecipes()
 const storePagination = useStorePagination()
-
-const currentPage = ref(1)
 
 onMounted(() => {
   let timeout = setInterval(() => {

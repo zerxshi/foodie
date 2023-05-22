@@ -11,8 +11,6 @@
 
 <script setup lang="ts">
 import RecipeInfo from "@/modules/RecipeInfoBlock/components/RecipeInfo.vue"
-import type { PropType } from "vue"
-import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const props = defineProps({
   exactRecipe: {
@@ -20,6 +18,4 @@ const props = defineProps({
     required: true,
   },
 })
-
-const storeRecipes = useStoreRecipes()
 </script>

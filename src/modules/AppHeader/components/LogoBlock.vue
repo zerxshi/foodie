@@ -16,7 +16,9 @@
 
     <logo-block-btn class="group" v-else>
       {{ storeAuth.userData.login }}
+
       <font-awesome-icon icon="fa-solid fa-angle-down" class="h-4" />
+
       <div
         class="absolute z-2 hidden origin-top-center animate-growOut flex-col bg-white shadow-2xl group-hover:flex"
       >
@@ -25,7 +27,9 @@
           class="p-2 text-sm"
           >Saved recipes</logo-block-btn
         >
+
         <hr />
+
         <logo-block-btn @click="storeAuth.logoutUser" class="p-2 text-sm"
           >Logout</logo-block-btn
         >

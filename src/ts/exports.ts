@@ -1,6 +1,5 @@
 import HeaderBtn from "@/UI/HeaderBtn.vue"
 import PrimaryBtn from "@/UI/PrimaryBtn.vue"
-import SmallBtn from "@/UI/SmallBtn.vue"
 import RecipeCard from "@/components/RecipeCard.vue"
 import ImageCard from "@/components/ImageCard.vue"
 import SmallRecipeCard from "@/components/SmallRecipeCard.vue"
@@ -16,11 +15,11 @@ import LogoBlockBtn from "@/UI/LogoBlockBtn.vue"
 import NavBtnContainer from "@/UI/NavBtnContainer.vue"
 import LoadingSpinner from "@/UI/LoadingSpinner.vue"
 import NoResultSign from "@/UI/NoResultSign.vue"
+import RegNavBtn from "@/UI/RegNavBtn.vue"
 
 export default [
   HeaderBtn,
   PrimaryBtn,
-  SmallBtn,
   RecipeCard,
   ImageCard,
   SmallRecipeCard,
@@ -36,4 +35,5 @@ export default [
   NavBtnContainer,
   LoadingSpinner,
   NoResultSign,
+  RegNavBtn,
 ]

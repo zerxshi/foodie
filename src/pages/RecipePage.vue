@@ -14,29 +14,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue"
 import RecipeInfoBlock from "@/modules/RecipeInfoBlock/RecipeInfoBlock.vue"
 import RecipeInstructionsBlock from "@/modules/RecipeInstructionsBlock/RecipeInstructionsBlock.vue"
 import SideBar from "@/components/SideBar.vue"
+import { ref, onMounted } from "vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
 import { useRoute } from "vue-router"
+import type { recipe } from "@/stores/storeRecipes"
 
 const storeRecipes = useStoreRecipes()
 
 const route = useRoute()
-
-interface recipe {
-  id: string
-  name: string
-  type: string
-  image: string
-  description: string
-  info: Array<string>
-  ingredients: Array<string>
-  steps: Array<string>
-  stepImages: Array<string>
-  stepNames: Array<string>
-}
 
 let exactRecipe = ref<recipe>()
 

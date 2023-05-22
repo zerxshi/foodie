@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4 mt-12 flex justify-center">
+  <div class="flex h-400 items-center justify-center">
     <p class="text-2xl"><slot /></p>
   </div>
 </template>

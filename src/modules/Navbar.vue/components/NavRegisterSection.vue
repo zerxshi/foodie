@@ -25,19 +25,11 @@
         v-if="isRegisterListOpen"
         class="absolute origin-top-center flex-col bg-white px-6"
       >
-        <button
-          @click="routeClickHandler('/saved-recipes')"
-          class="h-9 text-sm font-semibold text-gray-500 transition-all duration-500 hover:text-light-green"
-        >
+        <reg-nav-btn @click="routeClickHandler('/saved-recipes')">
           Saved recipes
-        </button>
+        </reg-nav-btn>
         <hr />
-        <button
-          @click="logOutClickHandler"
-          class="h-9 text-sm font-semibold text-gray-500 transition-all duration-500 hover:text-light-green"
-        >
-          Logout
-        </button>
+        <reg-nav-btn @click="logOutClickHandler"> Logout </reg-nav-btn>
       </div>
     </transition>
   </div>

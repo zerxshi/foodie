@@ -19,7 +19,6 @@ import Navbar from "@/modules/Navbar.vue/Navbar.vue"
 import HeaderBtns from "@/modules/AppHeader/components/HeaderBtns.vue"
 import HeaderInputForm from "@/modules/AppHeader/components/HeaderInputForm.vue"
 import LogoBlock from "@/modules/AppHeader/components/LogoBlock.vue"
-import { ref } from "vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const storeRecipes = useStoreRecipes()

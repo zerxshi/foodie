@@ -16,9 +16,9 @@ import { useStoreRecipes } from "./storeRecipes"
 import { useRoute, useRouter } from "vue-router"
 
 export const useStoreAuth = defineStore("storeAuth", () => {
-  let regModalOpen = ref<Boolean>(false)
+  const regModalOpen = ref<Boolean>(false)
   const register = ref<Boolean>(false)
-  let validationError = ref<Boolean>(false)
+  const validationError = ref<Boolean>(false)
   const route = useRoute()
   const router = useRouter()
 

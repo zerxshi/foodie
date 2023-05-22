@@ -34,7 +34,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { computed } from "@vue/runtime-core"
 import { useRouter } from "vue-router"
 import { useStoreFilters } from "@/stores/storeFilters"
 

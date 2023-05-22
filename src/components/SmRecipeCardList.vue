@@ -26,20 +26,7 @@
 
 <script setup lang="ts">
 import { ref, type PropType } from "vue"
-
-interface recipe {
-  id: string
-  name: string
-  type: string
-  image: string
-  description: string
-  info: Array<string>
-  ingredients: Array<string>
-  steps: Array<string>
-  stepImages: Array<string>
-  stepNames: Array<string>
-  saved?: boolean
-}
+import type { recipe } from "@/stores/storeRecipes"
 
 const props = defineProps({
   recipesPortion: {
