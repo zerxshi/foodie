@@ -1,7 +1,7 @@
 <template>
-  <span class="flex gap-4">
+  <dl class="flex gap-4">
     <slot />
-  </span>
+  </dl>
 </template>
 
 <script>

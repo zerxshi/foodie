@@ -1,17 +1,19 @@
 <template>
-  <div
+  <main
     v-if="storePagination.searchedRecipesPortion.length"
     class="mx-4 mt-12 flex justify-center"
   >
-    <div class="flex flex-col items-center gap-7 lg:flex-row lg:items-start">
+    <section
+      class="flex flex-col items-center gap-7 lg:flex-row lg:items-start"
+    >
       <sm-recipe-card-list
         :recipesPortion="storePagination.searchedRecipesPortion"
         :totalItems="storeFilters.searchedRecipes.length"
         :onClick="storePagination.searchPagePaginationClick"
       />
       <Side-bar :isHomePage="false" />
-    </div>
-  </div>
+    </section>
+  </main>
 
   <no-result-sign v-else> No recipe found with this name </no-result-sign>
 </template>

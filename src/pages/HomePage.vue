@@ -1,9 +1,9 @@
 <template>
-  <div v-if="storeRecipes.recipes.length">
+  <main v-if="storeRecipes.recipes.length">
     <Carousel />
     <Category-recs />
     <Recipes-list />
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

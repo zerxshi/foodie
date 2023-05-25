@@ -4,6 +4,7 @@
   >
     <button
       @click="imageModalOpen = true"
+      type="button"
       class="peer absolute top-1/2 left-1/2 z-2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 bg-light-green opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 lg:h-11 lg:w-11 xl:h-14 xl:w-14"
     >
       <p class="mb-1.5 text-lg font-bold text-white lg:text-2xl xl:text-3xl">

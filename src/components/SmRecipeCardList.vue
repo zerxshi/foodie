@@ -1,5 +1,7 @@
 <template>
-  <div class="flex max-w-xl flex-col gap-7 md:max-w-2xl lg:mr-10 xl:max-w-4xl">
+  <section
+    class="flex max-w-xl flex-col gap-7 md:max-w-2xl lg:mr-10 xl:max-w-4xl"
+  >
     <sm-recipe-card
       v-for="recipe in recipesPortion"
       :key="recipe"
@@ -21,7 +23,7 @@
       active-page-class="bg-light-green text-white"
       class="mt-5"
     />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

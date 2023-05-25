@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <footer>
     <Images-list />
     <Footer-info />
-  </div>
+  </footer>
 </template>
 
 <script setup lang="ts">

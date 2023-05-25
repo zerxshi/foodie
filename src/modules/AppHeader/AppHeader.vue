@@ -1,5 +1,5 @@
 <template>
-  <div
+  <header
     class="sticky top-0 z-2 flex flex-col items-center bg-white shadow-lg shadow-gray-300 lg:flex-row lg:justify-between"
   >
     <font-awesome-icon
@@ -11,11 +11,11 @@
     <Logo-block />
     <Header-btns />
     <Header-input-form />
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">
-import Navbar from "@/modules/Navbar.vue/Navbar.vue"
+import Navbar from "@/modules/Navbar/Navbar.vue"
 import HeaderBtns from "@/modules/AppHeader/components/HeaderBtns.vue"
 import HeaderInputForm from "@/modules/AppHeader/components/HeaderInputForm.vue"
 import LogoBlock from "@/modules/AppHeader/components/LogoBlock.vue"

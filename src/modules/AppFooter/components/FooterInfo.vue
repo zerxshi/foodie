@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="mt-3 flex items-center justify-center gap-4 text-2xl text-slate-800"
   >
     <a href="https://www.instagram.com/" target="blank">
@@ -20,10 +20,10 @@
     <a href="https://www.facebook.com" target="blank">
       <font-awesome-icon icon="fa-brands fa-facebook-f" />
     </a>
-    <a href="" target="blank">
+    <a href="#" target="blank">
       <font-awesome-icon icon="fa-solid fa-envelope" />
     </a>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts"></script>

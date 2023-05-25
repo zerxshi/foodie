@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col gap-10 lg:flex-row">
+  <section class="flex flex-col gap-10 lg:flex-row">
     <img
       :src="exactRecipe.image"
       alt="salmonSteak"
       class="lg:h-60 lg:max-w-xs xl:h-80 xl:max-w-md"
     />
     <Recipe-info :exactRecipe="exactRecipe" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

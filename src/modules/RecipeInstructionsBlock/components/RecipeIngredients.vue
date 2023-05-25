@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <section>
     <div class="flex flex-col gap-4 bg-blue-50 p-8 lg:w-72 xl:w-90">
-      <p class="p-2 text-lg font-semibold">Ingredients</p>
+      <h2 class="p-2 text-xl font-semibold">Ingredients</h2>
 
-      <div class="flex w-full flex-col gap-6">
+      <section class="flex w-full flex-col gap-6">
         <check-box v-for="ingredient in ingredients" :key="ingredient">{{
           ingredient
         }}</check-box>
-      </div>
+      </section>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

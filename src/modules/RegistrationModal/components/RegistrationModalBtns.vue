@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-3 flex justify-center gap-10">
+  <section class="mt-3 flex justify-center gap-10">
     <registration-modal-btn
       @click="storeAuth.onClickLogin"
       :class="{ 'border-b-light-green': !storeAuth.register }"
@@ -12,7 +12,7 @@
     >
       Register
     </registration-modal-btn>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

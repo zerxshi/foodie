@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4 flex justify-center">
+  <section class="mx-4 flex justify-center">
     <div class="max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
       <recipe-card
         v-for="(card, index) in recipeCards"
@@ -11,8 +11,8 @@
         :recipeId="card.recipeId"
         :textRight="textPosition(index)"
       />
-      <div class="mt-16 flex flex-col items-center gap-7 lg:flex-row">
-        <div class="flex flex-col gap-7 lg:mr-10 lg:max-w-2xl xl:max-w-4xl">
+      <section class="mt-16 flex flex-col items-center gap-7 lg:flex-row">
+        <section class="flex flex-col gap-7 lg:mr-10 lg:max-w-2xl xl:max-w-4xl">
           <sm-recipe-card
             v-for="card in smallRecipeCards"
             :key="card"
@@ -22,13 +22,13 @@
             :recipeDescription="card.recipeDescription"
             :recipeId="card.recipeId"
           />
-        </div>
+        </section>
         <div>
           <Side-bar />
         </div>
-      </div>
+      </section>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

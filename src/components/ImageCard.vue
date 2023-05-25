@@ -1,7 +1,7 @@
 <template>
   <div
     @click="chooseRoute(cardId, cardTitle)"
-    class="group relative text-center transition-all duration-500"
+    class="group relative cursor-pointer text-center transition-all duration-500"
   >
     <img :src="imageSource" alt="image" />
     <div
@@ -12,16 +12,16 @@
         class="flex h-3/4 w-3/4 flex-col items-center justify-center border-2 border-light-green transition-all duration-500 group-hover:border-white"
         :class="{ 'gap-2': slide }"
       >
-        <button
+        <p
           class="text-xs font-semibold text-light-green transition-all duration-500 group-hover:text-white"
         >
           {{ cardType }}
-        </button>
-        <button
+        </p>
+        <h2
           class="font-semibold transition-all duration-500 group-hover:text-white xl:text-2xl"
         >
           {{ cardTitle }}
-        </button>
+        </h2>
       </div>
     </div>
   </div>
@@ -46,7 +46,6 @@ const props = defineProps({
   cardTitle: String,
   cardId: String,
   slide: Boolean,
-  active: Boolean,
 })
 
 const router = useRouter()

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <section>
     <Info-text />
-    <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
+    <section class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
       <Contact-info />
       <GoogleMap
         api-key="AIzaSyAnLW2KLICB9TRMcOoMVFjNkUFx6-9V47U"
@@ -11,8 +11,8 @@
       >
         <Marker :options="{ position: center }" />
       </GoogleMap>
-    </div>
-  </div>
+    </section>
+  </section>
 </template>
 
 <script setup lang="ts">

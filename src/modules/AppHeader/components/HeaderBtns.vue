@@ -1,27 +1,34 @@
 <template>
-  <div class="hidden lg:block">
-    <header-btn @click="$router.push('/')">Home</header-btn>
-    <div class="relative inline-block">
-      <header-btn class="group"
-        >Categories
-        <font-awesome-icon icon="fa-solid fa-angle-down" class="h-4" />
+  <nav class="hidden lg:block">
+    <header-link @click="$router.push('/')">Home</header-link>
+
+    <div class="relative m-3 inline-block">
+      <div class="group transition-all duration-300">
+        <span
+          class="flex items-center text-lg font-semibold text-slate-800 hover:text-light-green"
+        >
+          <h3 class="cursor-pointer">Categories</h3>
+          <font-awesome-icon icon="fa-solid fa-angle-down" class="ml-1 h-4" />
+        </span>
+
         <div
           class="absolute z-2 hidden origin-top-center animate-growOut flex-col bg-white shadow-2xl group-hover:flex"
         >
-          <header-btn @click="$router.push('/meals')" class="text-sm"
-            >Meal type</header-btn
+          <header-link @click="$router.push('/meals')" class="text-sm"
+            >Meal type</header-link
           >
           <hr />
-          <header-btn @click="$router.push('/dishes')" class="text-sm"
-            >Dish type</header-btn
+          <header-link @click="$router.push('/dishes')" class="text-sm"
+            >Dish type</header-link
           >
           <hr />
-          <header-btn @click="$router.push('/cuisines')" class="text-sm"
-            >Cuisine type</header-btn
+          <header-link @click="$router.push('/cuisines')" class="text-sm"
+            >Cuisine type</header-link
           >
         </div>
-      </header-btn>
+      </div>
     </div>
-    <header-btn @click="$router.push('/contact')">Contact us</header-btn>
-  </div>
+
+    <header-link @click="$router.push('/contact')">Contact us</header-link>
+  </nav>
 </template>

@@ -7,9 +7,11 @@
       icon="fa-solid fa-magnifying-glass"
       class="pointer-events-none absolute z-2 block text-center text-slate-800"
     />
+    <label for="search" class="sr-only">Search recipe by name</label>
     <input
       v-model="storeFilters.searchQuery"
       @keypress.enter="onPressHandler"
+      id="search"
       class="w-72 border-b-2 border-slate-800 pl-5 font-semibold text-slate-800 outline-none placeholder:text-center"
       type="text"
       placeholder="Search recipe by name..."

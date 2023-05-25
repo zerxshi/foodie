@@ -1,19 +1,21 @@
 <template>
-  <carousel :items-to-show="1" :wrap-around="true" :breakpoints="breakPoints">
-    <slide v-for="(n, index) in 6" :key="n">
-      <image-card
-        :imageSource="storeRecipes.recipes[index].image"
-        :cardType="storeRecipes.recipes[index].type"
-        :cardTitle="storeRecipes.recipes[index].name"
-        :cardId="storeRecipes.recipes[index].id"
-        :slide="true"
-      />
-    </slide>
+  <section>
+    <carousel :items-to-show="1" :wrap-around="true" :breakpoints="breakPoints">
+      <slide v-for="(n, index) in 6" :key="n">
+        <image-card
+          :imageSource="storeRecipes.recipes[index].image"
+          :cardType="storeRecipes.recipes[index].type"
+          :cardTitle="storeRecipes.recipes[index].name"
+          :cardId="storeRecipes.recipes[index].id"
+          :slide="true"
+        />
+      </slide>
 
-    <template #addons>
-      <navigation class="text-black" />
-    </template>
-  </carousel>
+      <template #addons>
+        <navigation class="text-black" />
+      </template>
+    </carousel>
+  </section>
 </template>
 
 <script setup lang="ts">

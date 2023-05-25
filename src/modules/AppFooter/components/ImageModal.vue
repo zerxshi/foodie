@@ -15,9 +15,9 @@
             icon="fa-solid fa-xmark"
             class="absolute top-0 right-0 h-7 w-7 bg-light-green text-white"
           />
-          <div class="absolute bottom-4 left-4 rounded-2xl bg-light-green p-2">
+          <span class="absolute bottom-4 left-4 rounded-2xl bg-light-green p-2">
             <p class="text-xs font-semibold text-white">Instagram image</p>
-          </div>
+          </span>
         </div>
       </div>
     </transition>

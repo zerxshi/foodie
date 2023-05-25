@@ -21,6 +21,7 @@ import {
   faMobileScreenButton,
   faArrowsRotate,
   faHeart as solidHeart,
+  faAngleUp,
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebookF,
@@ -65,7 +66,8 @@ library.add(
   faHeart,
   solidHeart,
   faInstagram,
-  faGoogle
+  faGoogle,
+  faAngleUp
 )
 
 app

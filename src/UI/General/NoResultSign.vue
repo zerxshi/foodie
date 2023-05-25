@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-400 items-center justify-center">
-    <p class="text-2xl"><slot /></p>
+    <h1 class="text-2xl"><slot /></h1>
   </div>
 </template>
 

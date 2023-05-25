@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-16 flex flex-wrap justify-center">
+  <section class="mt-16 flex flex-wrap justify-center">
     <inst-image v-for="image in instImages" :key="image" :imageSource="image" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

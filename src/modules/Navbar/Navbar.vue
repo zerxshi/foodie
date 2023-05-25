@@ -3,7 +3,7 @@
     enter-active-class="animate-openNav"
     leave-active-class="animate-closeNav"
   >
-    <div
+    <nav
       v-if="storeRecipes.isNavOpen"
       class="fixed left-0 z-10 flex h-screen w-80 flex-col items-center gap-4 overflow-x-hidden bg-white lg:-translate-x-full"
     >
@@ -16,13 +16,13 @@
       <Nav-btns-section />
 
       <Nav-register-section />
-    </div>
+    </nav>
   </transition>
 </template>
 
 <script setup lang="ts">
-import NavBtnsSection from "@/modules/Navbar.vue/components/NavBtnsSection.vue"
-import NavRegisterSection from "@/modules/Navbar.vue/components/NavRegisterSection.vue"
+import NavBtnsSection from "@/modules/Navbar/components/NavBtnsSection.vue"
+import NavRegisterSection from "@/modules/Navbar/components/NavRegisterSection.vue"
 import { useStoreRecipes } from "@/stores/storeRecipes"
 
 const storeRecipes = useStoreRecipes()

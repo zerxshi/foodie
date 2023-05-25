@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center">
+  <main class="flex justify-center">
     <div class="max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
-      <div
+      <section
         class="m-4 mt-12 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-20"
       >
         <image-card
@@ -17,9 +17,9 @@
           :slide="card.slide"
           class="sm:w-60 md:w-80 lg:w-72 xl:w-90"
         />
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

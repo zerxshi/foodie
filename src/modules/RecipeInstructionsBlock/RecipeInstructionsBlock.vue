@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-10 lg:flex-row">
+  <section class="flex flex-col gap-10 lg:flex-row">
     <Recipe-instructions
       :name="exactRecipe.name"
       :type="exactRecipe.type"
@@ -8,7 +8,7 @@
       :stepImages="exactRecipe.stepImages"
     />
     <Recipe-ingredients :ingredients="exactRecipe.ingredients" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

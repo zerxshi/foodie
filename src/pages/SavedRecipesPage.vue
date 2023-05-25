@@ -1,17 +1,19 @@
 <template>
-  <div
+  <main
     v-if="storePagination.savedRecipesPortion.length"
     class="mx-4 mt-12 flex justify-center"
   >
-    <div class="flex flex-col items-center gap-7 lg:flex-row lg:items-start">
+    <section
+      class="flex flex-col items-center gap-7 lg:flex-row lg:items-start"
+    >
       <sm-recipe-card-list
         :recipesPortion="storePagination.savedRecipesPortion"
         :totalItems="storeRecipes.savedRecipes.length"
         :onClick="storePagination.savedPagePaginationClick"
       />
       <Side-bar :isHomePage="false" />
-    </div>
-  </div>
+    </section>
+  </main>
 
   <loading-spinner
     v-if="

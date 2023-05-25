@@ -1,31 +1,34 @@
 <template>
-  <div class="flex items-start justify-center gap-9">
-    <img
-      @click="$router.push(`/recipe/${recipeId}`)"
-      :src="imageSource"
-      alt="recipeCardImg"
-      class="w-48 md:w-72 lg:w-60 xl:w-80"
-    />
+  <article class="flex items-start justify-center gap-9">
+    <a @click="$router.push(`/recipe/${recipeId}`)">
+      <img
+        :src="imageSource"
+        alt="recipeCardImg"
+        class="max-w-[192px] cursor-pointer md:max-w-[288px] lg:max-w-[240px] xl:max-w-xs"
+      />
+    </a>
+
     <div class="flex flex-col items-start gap-3">
-      <button
+      <a
         @click="
           $router.push(`/category/${storeFilters.splitCategory(recipeType)}`)
         "
-        class="text-xs font-semibold text-light-green"
+        class="cursor-pointer text-xs font-semibold text-light-green"
       >
         {{ recipeType }}
-      </button>
-      <button
-        @click="$router.push(`/recipe/${recipeId}`)"
-        class="text-left text-lg font-semibold xl:text-2xl"
-      >
-        {{ recipeTitle }}
-      </button>
+      </a>
+
+      <a @click="$router.push(`/recipe/${recipeId}`)" class="cursor-pointer">
+        <h2 class="text-left text-lg font-semibold xl:text-2xl">
+          {{ recipeTitle }}
+        </h2>
+      </a>
+
       <p class="text-sm text-gray-500">
         {{ recipeDescription }}
       </p>
     </div>
-  </div>
+  </article>
 </template>
 
 <script lang="ts">

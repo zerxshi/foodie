@@ -1,16 +1,16 @@
 <template>
-  <div v-if="exactRecipe" class="mx-4 mt-12 flex justify-center">
-    <div class="flex flex-col items-center lg:flex-row lg:items-start">
-      <div
+  <main v-if="exactRecipe" class="mx-4 mt-12 flex justify-center">
+    <section class="flex flex-col items-center lg:flex-row lg:items-start">
+      <section
         class="flex max-w-lg flex-col gap-10 md:max-w-2xl lg:mr-10 xl:max-w-4xl"
       >
         <Recipe-info-block :exactRecipe="exactRecipe" />
         <Recipe-instructions-block :exactRecipe="exactRecipe" />
-      </div>
+      </section>
 
       <Side-bar :isHomePage="false" />
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <div class="sm:max-w-xs lg:w-64">
+  <aside class="sm:max-w-xs lg:w-64">
     <img src="@/assets/sidebar-image.png" alt="" class="lg:w-72 xl:w-64" />
 
     <sidebar-card
@@ -11,22 +11,23 @@
       :recipeId="card.recipeId"
     />
 
-    <div
+    <form
+      @submit.prevent
       v-if="!isHomePage"
       class="mt-5 flex flex-col items-center gap-5 bg-gray-100 py-8"
     >
-      <p class="font-semibold">Subscribe to newsletter</p>
+      <h2 class="font-semibold">Subscribe to newsletter</h2>
       <input
         type="email"
         placeholder="E-mail"
         class="h-12 w-48 border border-b-2 border-gray-300 px-7 text-sm font-semibold outline-none transition-all duration-500 placeholder:text-xs placeholder:text-gray-500 focus:border-b-light-green"
       />
-      <primary-btn class="w-48">Subscribe</primary-btn>
+      <primary-btn type="submit" class="w-48">Subscribe</primary-btn>
       <p class="mx-4 text-center text-xs text-gray-500">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </p>
-    </div>
-  </div>
+    </form>
+  </aside>
 </template>
 
 <script lang="ts">
