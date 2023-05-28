@@ -15,7 +15,11 @@
       <p class="text-base text-gray-500">
         {{ step }}
       </p>
-      <img :src="stepImages[index]" alt="step image" />
+      <img
+        v-if="stepImages[index] !== ''"
+        :src="stepImages[index]"
+        alt="step image"
+      />
     </section>
   </section>
 </template>
